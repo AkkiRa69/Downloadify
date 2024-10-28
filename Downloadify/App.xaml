@@ -1,0 +1,10 @@
+﻿<Application x:Class="Downloadify.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:Downloadify">
+    <Application.Resources>
+        <FontFamily x:Key="Kantumruy Pro">Assets/fonts/Kantumruy Pro.ttf#Kantumruy Pro</FontFamily>
+        <FontFamily x:Key="Moul">Assets/fonts/Moul.ttf#Moul</FontFamily>
+        <FontFamily x:Key="Lobster">Assets/fonts/Lobster.ttf#Lobster</FontFamily>
+    </Application.Resources>
+</Application>

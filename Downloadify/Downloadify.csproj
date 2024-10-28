@@ -1,0 +1,79 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net6.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UseWPF>true</UseWPF>
+    <ApplicationIcon>download.ico</ApplicationIcon>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="ffmpeg\**" />
+    <EmbeddedResource Remove="ffmpeg\**" />
+    <None Remove="ffmpeg\**" />
+    <Page Remove="ffmpeg\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="Assets\beepboop.gif" />
+    <None Remove="Assets\fonts\Kantumruy Pro.ttf" />
+    <None Remove="Assets\fonts\Lobster.ttf" />
+    <None Remove="Assets\fonts\Moul.ttf" />
+    <None Remove="Assets\images\check_mark.png" />
+    <None Remove="Assets\images\cross_mark.png" />
+    <None Remove="Assets\images\danger.png" />
+    <None Remove="Assets\images\downloadify.jpg" />
+    <None Remove="Assets\images\information.png" />
+    <None Remove="Assets\images\logo.png" />
+    <None Remove="Assets\images\warning.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="download.ico" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="WpfAnimatedGif" Version="2.0.2" />
+    <PackageReference Include="YoutubeExplode" Version="6.4.3" />
+    <PackageReference Include="YoutubeExplode.Converter" Version="6.4.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Assets\fonts\Lobster.ttf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\images\beepboop.gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\fonts\Kantumruy Pro.ttf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\fonts\Moul.ttf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\images\check_mark.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\images\cross_mark.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\images\danger.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\images\downloadify.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\images\information.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\images\logo.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\images\warning.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+
+</Project>

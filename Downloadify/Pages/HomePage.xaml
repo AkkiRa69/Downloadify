@@ -1,0 +1,156 @@
+﻿<UserControl x:Class="Downloadify.Pages.HomePage"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Downloadify.Pages"
+             xmlns:gif="http://wpfanimatedgif.codeplex.com"
+             mc:Ignorable="d" 
+             d:DesignHeight="750" d:DesignWidth="1100"  Width="1100">
+    <UserControl.Resources>
+        <Style TargetType="Button">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type ButtonBase}">
+                        <Border x:Name="border" CornerRadius="8" Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" SnapsToDevicePixels="true">
+                            <ContentPresenter x:Name="contentPresenter" Focusable="False" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="Button.IsDefaulted" Value="true">
+                                <Setter Property="BorderBrush" TargetName="border" Value="{DynamicResource {x:Static SystemColors.HighlightBrushKey}}"/>
+                            </Trigger>
+                            <Trigger Property="IsMouseOver" Value="true">
+                                <Setter Property="Background" TargetName="border" Value="#112D4E"/>
+                                <Setter Property="BorderBrush" TargetName="border" Value="#112D4E"/>
+                            </Trigger>
+                            <Trigger Property="IsPressed" Value="true">
+                                <Setter Property="Background" TargetName="border" Value="#112D4E"/>
+                                <Setter Property="BorderBrush" TargetName="border" Value="#112D4E"/>
+                            </Trigger>
+                            <Trigger Property="IsEnabled" Value="false">
+                                <Setter Property="Background" TargetName="border" Value="#DDDDDD"/>
+                                <Setter Property="BorderBrush" TargetName="border" Value="#DDDDDD"/>
+                                <Setter Property="TextElement.Foreground" TargetName="contentPresenter" Value="#AAAAAA"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </UserControl.Resources>
+    <Grid Background="#faf7fc">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <StackPanel Grid.Row="0" VerticalAlignment="Center">
+            <TextBlock Text="Download YouTube Videos and Shorts" HorizontalAlignment="Center" FontSize="32" FontWeight="SemiBold" Foreground="#143c56"/>
+            <TextBlock Text="Paste the URL of the YouTube video or short and press to download in HD" FontSize="14" Margin="0 15 0 35" HorizontalAlignment="Center" Foreground="#143c56"/>
+            <Border Background="#ffffff" Padding="60 30" CornerRadius="10" Margin="60 0">
+                <Border.Effect>
+                    <DropShadowEffect  BlurRadius="30" ShadowDepth="20" Direction="270" Color="#f2f1f1" />
+                </Border.Effect>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="auto"/>
+                    </Grid.ColumnDefinitions>
+                    <TextBox Grid.Column="0" Text="https://" x:Name="TextBoxUrl" GotFocus="TextBox_GotFocus" LostFocus="TextBox_LostFocus" FontSize="15" Foreground="#8396a6" BorderBrush="#8396a6" Padding="15" TextChanged="TextBoxUrl_TextChanged">
+                        <TextBox.Resources>
+                            <Style TargetType="{x:Type Border}">
+                                <Setter Property="CornerRadius" Value="8"/>
+                            </Style>
+                        </TextBox.Resources>
+                    </TextBox>
+                    <Button Margin="8 0 0 0" Grid.Column="1" x:Name="ButtonDownload" IsEnabled="False" Content="Download" Background="#00ccc5" Foreground="White" FontSize="16" Padding="25 0" BorderBrush="#00ccc5" Click="ButtonDownload_Click"/>
+                </Grid>
+            </Border>
+        </StackPanel>
+        <Grid Grid.Row="1" x:Name="MainStackPanel">
+            <TextBlock Text="© 2024 San Monyakkhara | All Rights Reserved." VerticalAlignment="Bottom" HorizontalAlignment="Center" Margin="0 0 0 8"/>
+            <StackPanel VerticalAlignment="Center" x:Name="ImageLoading" Visibility="Hidden">
+                <Image gif:ImageBehavior.AnimatedSource="/Assets/images/beepboop.gif" VerticalAlignment="Center" Height="60" Width="60" Margin="0 0 0 25"/>
+                <TextBlock Text="Please wait a moment..." HorizontalAlignment="Center" FontSize="16"/>
+            </StackPanel>
+            <Border x:Name="StackPanelGuide" Visibility="Visible" Background="#e0f6ff" Padding="60 30" CornerRadius="15" Margin="60 0 60 60">
+                <Border.Effect>
+                    <DropShadowEffect BlurRadius="15" ShadowDepth="15" Direction="270" Color="#f2f1f1" />
+                </Border.Effect>
+                <StackPanel VerticalAlignment="Center">
+                    <TextBlock HorizontalAlignment="Center" FontSize="15" Text="To download photos or videos, navigate to the specific post and copy the URL from your browser's address bar."/>
+                    <TextBlock Margin="0 20" HorizontalAlignment="Center" FontSize="15" Text="Most social networks have a built-in option that allows you to copy the link to the post."/>
+                    <TextBlock HorizontalAlignment="Center" FontSize="15" Text="For example, you can try:"/>
+                    <Grid Margin="0 20">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition/>
+                            <ColumnDefinition Width="auto"/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+                        <TextBox Grid.Column="0" BorderThickness="0" Text="https://www.youtube.com/watch?v=Jbt5dRYFOPo" IsReadOnly="True" Padding="12" FontSize="15"/>
+                        <TextBlock Grid.Column="1" Text="Or" FontSize="16" Margin="10 0" VerticalAlignment="Center"/>
+                        <TextBox Grid.Column="2" BorderThickness="0" Text="https://youtu.be/Jbt5dRYFOPo" Padding="12" IsReadOnly="True" FontSize="15"/>
+                    </Grid>
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                        <TextBlock HorizontalAlignment="Center" FontSize="15" Text="If you're having issues with a specific URL, please "/>
+                        <TextBlock HorizontalAlignment="Center" FontSize="15" Text="contact us." x:Name="TextBlockContactUs" MouseDown="TextBlockContactUs_MouseDown" Foreground="#54b6f5"/>
+                    </StackPanel>
+                </StackPanel>
+            </Border>
+            <StackPanel x:Name="StackPanelVideoDetail" Visibility="Hidden">
+                <Border Padding="60 25" VerticalAlignment="Top" CornerRadius="15" Background="White" Margin="60 0">
+                    <Border.Effect>
+                        <DropShadowEffect BlurRadius="15" ShadowDepth="15" Direction="270" Color="#f2f1f1" />
+                    </Border.Effect>
+                    <StackPanel >
+                        <Grid Margin="0 0 0 10">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+                            </Grid.ColumnDefinitions>
+                            <StackPanel Grid.Column="0">
+                                <TextBlock Text="Video Title" FontSize="12" Margin="0 0 0 5"/>
+                                <TextBox x:Name="TextBoxTitle" FontSize="15" Foreground="Black" BorderBrush="#8396a6" Padding="10">
+                                    <TextBox.Resources>
+                                        <Style TargetType="{x:Type Border}">
+                                            <Setter Property="CornerRadius" Value="8"/>
+                                        </Style>
+                                    </TextBox.Resources>
+                                </TextBox>
+                            </StackPanel>
+                            <StackPanel Grid.Column="2">
+                                <TextBlock Text="Video Quality" FontSize="12" Margin="10 0 0 5"/>
+                                <ComboBox Margin="10 0 0 0" VerticalAlignment="Center" x:Name="ComboBoxQuality" SelectedIndex="0" Padding="11" IsEnabled="False"/>
+                            </StackPanel>
+                        </Grid>
+                        <Grid Margin="0 30">
+                            <StackPanel>
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition/>
+                                        <ColumnDefinition Width="auto"/>
+                                    </Grid.ColumnDefinitions>
+                                    <StackPanel Grid.Column="0">
+                                        <TextBlock Text="Video Save Path" FontSize="12" Margin="0 0 0 5"/>
+                                        <TextBox  x:Name="TextBoxSavePath" Padding="10" FontSize="15" IsReadOnly="True">
+                                            <TextBox.Resources>
+                                                <Style TargetType="{x:Type Border}">
+                                                    <Setter Property="CornerRadius" Value="8"/>
+                                                </Style>
+                                            </TextBox.Resources>
+                                        </TextBox>
+                                    </StackPanel>
+                                    <Button Grid.Column="1" x:Name="ButtonBrowse" Background="#1d3961" Foreground="White" FontSize="16" Padding="25 0" BorderBrush="#1d3961" Content="Browse" Margin="8 20 0 0" Click="ButtonBrowse_Click"/>
+                                </Grid>
+                                <CheckBox x:Name="CheckBoxAudioOnly" Content="Audio Only" HorizontalAlignment="Left" Margin="0 10 0 0" IsEnabled="False"/>
+                            </StackPanel>
+                        </Grid>
+                        <StackPanel>
+                            <TextBlock x:Name="TextBlockPercent" Text="0%" FontSize="16"/>
+                            <ProgressBar Background="White" x:Name="ProgressBarDownload" Height="20" Foreground="#08cbc6" Margin="0 5 0 0"/>
+                        </StackPanel>
+                    </StackPanel>
+                </Border>
+            </StackPanel>
+        </Grid>
+    </Grid>
+</UserControl>

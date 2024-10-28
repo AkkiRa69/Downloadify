@@ -1,0 +1,25 @@
+﻿<Window x:Class="Downloadify.Components.MessageBoxWarning"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Downloadify.Components"
+        mc:Ignorable="d"
+        Title="MessageBoxWarning" Height="70" Width="700" WindowStyle="None">
+    <Grid>
+        <Border Padding="15" BorderBrush="#ffbf91" BorderThickness="4 0 0 0">
+            <Border.Background>
+                <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
+                    <!-- Soft gradient starting from #edf7fb and blending into White -->
+                    <GradientStop Color="#edf7fb" Offset="0" />
+                    <GradientStop Color="#f5f9fc" Offset="1" />
+                </LinearGradientBrush>
+            </Border.Background>
+            <StackPanel Orientation="Horizontal">
+                <Image Source="/Assets/images/warning.png" />
+                <TextBlock Text="Warning!" FontSize="15" FontWeight="SemiBold" VerticalAlignment="Center" Margin="10 0" />
+                <TextBlock Text="Whoops! Looks like there’s a format issue. Please check your video format!" FontSize="14" VerticalAlignment="Center"/>
+            </StackPanel>
+        </Border>
+    </Grid>
+</Window>
