@@ -1,4 +1,5 @@
 .vs
 Downloadify/bin
-!Downloadify/bin/Debug/net6.0-windows/ffmpeg/ffmpeg.exe
 Downloadify/obj
+!Downloadify/bin/Debug/net6.0-windows/ffmpeg/ffmpeg.exe
+!Downloadify/bin/Release/net6.0-windows/ffmpeg/ffmpeg.exe
