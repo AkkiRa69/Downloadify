@@ -55,7 +55,7 @@
                         <ImageBrush ImageSource="Assets/images/downloadify.jpg"/>
                     </Border.Background>
                 </Border>
-                <TextBlock Text="Downloadify" FontSize="30" FontFamily="{StaticResource Lobster}" VerticalAlignment="Center" Foreground="#00ccc5" FontWeight="Bold"/>
+                <TextBlock Text="Downloadify" FontSize="30" FontFamily="{StaticResource Lobster}" VerticalAlignment="Center" FontWeight="Bold"/>
             </StackPanel>
             <StackPanel Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Right" Grid.Row="0">
                 <Button Content="Home" Background="Transparent" BorderThickness="0 0 0.1 0" FontSize="15" x:Name="ButtonHome" Click="ButtonHome_Click"/>

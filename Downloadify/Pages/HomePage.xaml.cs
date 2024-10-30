@@ -365,7 +365,7 @@ namespace Downloadify.Pages
         // Function to merge video and audio using FFmpeg
         private void MergeVideoAndAudio(string videoPath, string audioPath, string outputPath)
         {
-            string ffmpegPath = Directory.GetCurrentDirectory() + "\\ffmpeg\\bin\\ffmpeg.exe"; // Make sure FFmpeg is installed and its path is provided
+            string ffmpegPath = Directory.GetCurrentDirectory() + "\\ffmpeg\\ffmpeg.exe"; // Make sure FFmpeg is installed and its path is provided
             var startInfo = new ProcessStartInfo
             {
                 FileName = ffmpegPath,

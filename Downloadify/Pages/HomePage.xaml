@@ -67,7 +67,7 @@
             </Border>
         </StackPanel>
         <Grid Grid.Row="1" x:Name="MainStackPanel">
-            <TextBlock Text="© 2024 San Monyakkhara | All Rights Reserved." VerticalAlignment="Bottom" HorizontalAlignment="Center" Margin="0 0 0 8"/>
+            <TextBlock Text="© 2024 San Monyakkhara, Inc. | All Rights Reserved." VerticalAlignment="Bottom" HorizontalAlignment="Center" Margin="0 0 0 8"/>
             <StackPanel VerticalAlignment="Center" x:Name="ImageLoading" Visibility="Hidden">
                 <Image gif:ImageBehavior.AnimatedSource="/Assets/images/beepboop.gif" VerticalAlignment="Center" Height="60" Width="60" Margin="0 0 0 25"/>
                 <TextBlock Text="Please wait a moment..." HorizontalAlignment="Center" FontSize="16"/>
