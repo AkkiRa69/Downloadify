@@ -11,7 +11,8 @@ namespace Downloadify
     public partial class App : Application
     {
         public static MainWindow main = new MainWindow();
-        public static bool isExplorerOpen = true;
+        public static bool isExplorerOpen = true; 
+        public static string selectedSavePath = "";
         protected override void OnStartup(StartupEventArgs e)
         {
             main.Show();

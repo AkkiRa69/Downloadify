@@ -19,9 +19,10 @@ namespace Downloadify.Components
     /// </summary>
     public partial class MessageBoxSuccess : Window
     {
-        public MessageBoxSuccess()
+        public MessageBoxSuccess(string meesage = "Your video has been downloaded successfully! Enjoy watching!")
         {
             InitializeComponent();
+            TextMessage.Text = meesage;
         }
     }
 }

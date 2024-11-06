@@ -18,7 +18,7 @@
             <StackPanel Orientation="Horizontal">
                 <Image Source="/Assets/images/check_mark.png" />
                 <TextBlock Text="Success!" FontSize="15" FontWeight="SemiBold" VerticalAlignment="Center" Margin="10 0" />
-                <TextBlock Text="Your video has been downloaded successfully! Enjoy watching!" FontSize="14" VerticalAlignment="Center"/>
+                <TextBlock Text="Your video has been downloaded successfully! Enjoy watching!" x:Name="TextMessage" FontSize="14" VerticalAlignment="Center"/>
             </StackPanel>
         </Border>
     </Grid>
