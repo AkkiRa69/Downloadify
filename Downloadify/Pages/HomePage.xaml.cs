@@ -94,21 +94,18 @@ namespace Downloadify.Pages
                 {
                     await DownloadVideoAndAudio(videoId);
                 }
-                //else if (CheckBoxWav.IsChecked == true)
-                //{
-                //    await DownloadAudioOnly(videoId);
-                //    await ConvertToWavAsync(App.selectedSavePath); // Ensure asynchronous execution
-                //}
             }
             catch (Exception ex)
             {
                 ShowWindowMessage(new Components.MessageBoxDanger($"An error occurred: {ex.Message}"));
             }
         }
+
         public async Task ConvertToWavAsync(string inputFilePath)
         {
             await Task.Run(() => ConvertToWav(inputFilePath));
         }
+
         public void ConvertToWav(string inputFilePath)
         {
             string outputFilePath = Path.ChangeExtension(inputFilePath, ".wav");
@@ -138,6 +135,7 @@ namespace Downloadify.Pages
                 MessageBox.Show("Error: Conversion to WAV failed.");
             }
         }
+
         private void ButtonBrowse_Click(object sender, RoutedEventArgs e)
         {
             SaveFileDialog saveFileDialog = new SaveFileDialog
@@ -364,36 +362,30 @@ namespace Downloadify.Pages
         {
             Process.Start(new ProcessStartInfo
             {
-                FileName = "https://t.me/monyakkhara",
-                UseShellExecute = true // This is required to use the default browser
+                FileName = "tg://resolve?domain=monyakkhara",
+                UseShellExecute = true
             });
         }
 
         private async void CheckBoxAudioOnly_CheckedChanged(object sender, RoutedEventArgs e)
         {
-            // Check for null references and exit the method early if any are null
             if (CheckBoxMp4 == null || CheckBoxAudioOnly == null)
             {
-                // Log or handle the null reference error
                 return;
             }                               
 
-            // Ensure the sender is a CheckBox
             if (sender is not CheckBox checkBox)
                 return;
 
-            // Avoid looping: If both checkboxes are unchecked, keep one checked
             if (CheckBoxMp4.IsChecked == false && CheckBoxAudioOnly.IsChecked == false)
             {
                 CheckBoxMp4.IsChecked = true;
                 return;
             }
 
-            // Hide the video details and show the loading indicator
             StackPanelVideoDetail.Visibility = Visibility.Hidden;
             ImageLoading.Visibility = Visibility.Visible;
 
-            // Check the state of the checkbox and adjust the other checkbox accordingly
             if (checkBox.IsChecked == true)
             {
                 if (checkBox == CheckBoxAudioOnly)
@@ -402,14 +394,12 @@ namespace Downloadify.Pages
                     CheckBoxAudioOnly.IsChecked = false;
             }
 
-            // Fetch video details asynchronously
             try
             {
                 await FetchVideoDetails();
             }
             finally
             {
-                // Make sure to show the video details after fetching
                 StackPanelVideoDetail.Visibility = Visibility.Visible;
                 ImageLoading.Visibility = Visibility.Hidden;
             }

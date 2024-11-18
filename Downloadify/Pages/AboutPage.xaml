@@ -101,7 +101,7 @@
                         <Border CornerRadius="0 0 15 15" Background="White" Height="80" Padding="15 15 0 15">
                             <StackPanel VerticalAlignment="Center">
                                 <TextBlock Text="San Monyakkhara" FontStyle="Italic" FontSize="22" FontWeight="Bold"/>
-                                <TextBlock Text="C# Programming" FontStyle="Italic" FontSize="16" Foreground="Gray" FontWeight="SemiBold"/>
+                                <TextBlock Text="Student" FontStyle="Italic" FontSize="16" Foreground="Gray" Margin="0 2 0 0" FontWeight="SemiBold"/>
                             </StackPanel>
                         </Border>
                     </StackPanel>
@@ -115,16 +115,18 @@
                     </Grid.ColumnDefinitions>
                     <StackPanel Grid.Column="0" HorizontalAlignment="Left">
                         <TextBlock Text="Advisor" Foreground="Gray" FontWeight="SemiBold" FontSize="16"/>
-                        <TextBlock Text="Mentor1" Foreground="Gray" Margin="0 8" FontWeight="SemiBold" FontSize="16"/>
+                        <TextBlock Text="Advisor" Foreground="Gray" Margin="0 13 0 0" FontWeight="SemiBold" FontSize="16"/>
+                        <TextBlock Text="Mentor1" Foreground="Gray" Margin="0 13" FontWeight="SemiBold" FontSize="16"/>
                         <TextBlock Text="Mentor2" Foreground="Gray" FontWeight="SemiBold" FontSize="16"/>
-                        <TextBlock Text="Course" Foreground="Gray" Margin="0 8" FontWeight="SemiBold" FontSize="16"/>
+                        <TextBlock Text="Course" Foreground="Gray" Margin="0 13" FontWeight="SemiBold" FontSize="16"/>
                         <TextBlock Text="Project" Foreground="Gray" FontWeight="SemiBold" FontSize="16"/>
                     </StackPanel>
                     <StackPanel Grid.Column="1" HorizontalAlignment="Right">
                         <TextBlock Text="Teang Chandalen" FontWeight="SemiBold" FontSize="16" HorizontalAlignment="Right"/>
-                        <TextBlock Text="Eav Phanith" FontWeight="SemiBold" Margin="0 8" FontSize="16" HorizontalAlignment="Right"/>
+                        <TextBlock Text="Kim Solei" FontWeight="SemiBold" Margin="0 13 0 0" FontSize="16" HorizontalAlignment="Right"/>
+                        <TextBlock Text="Eav Phanith" FontWeight="SemiBold" Margin="0 13" FontSize="16" HorizontalAlignment="Right"/>
                         <TextBlock Text="Nuch Chamnan" FontWeight="SemiBold" FontSize="16" HorizontalAlignment="Right"/>
-                        <TextBlock Text="C# Programming" FontWeight="SemiBold" Margin="0 8" FontSize="16" HorizontalAlignment="Right"/>
+                        <TextBlock Text="C# Programming" FontWeight="SemiBold" Margin="0 13" FontSize="16" HorizontalAlignment="Right"/>
                         <TextBlock Text="Downloadify" FontWeight="SemiBold" FontSize="16" HorizontalAlignment="Right"/>
                     </StackPanel>
                 </Grid>
